@@ -66,9 +66,9 @@ number stored in this slot":
     05: output [11]
     06:
     07:
-    10: 12    45,12,3.75,3.2,1.171875
-    11: 15    12,3.75,3.2,1.1718752.73067
-    12: 0.8   3.75,3.2, 1.171875, 2.73067, 0.42915
+    10: 12    45
+    11: 15    12
+    12: 3     9
     13:
     14:
     15:
@@ -76,11 +76,11 @@ number stored in this slot":
     17:
 
 Feel free to use the above as space to actually work out the
-answer. What does this output?
-0.8
+answer. What does this output?     
+3     
 Try the same program with some other inputs in slots 10 and 11.  What
-does this program compute?
-0.42915
+does this program compute?     
+outputs the remainder of [10] divided by [11] (45 / 12 = remainder 9)     
 ## 3. Low-level programming II
 
 Another one of the same, but instead of writing out exactly what
@@ -117,19 +117,19 @@ Here's the program:
     05: MOV 13 12
     06: JNZ 10 02
     07: OUT 11
-    10: 6,    5,4,3,2,1,0
-    11:       5,4,9,13,22,35,57
-    12:       4,9,13,22,35,57,92
-    13:       9,13,22,35,57,92
+    10: 6, 5,4,3,2,1,0
+    11:    0,1,1,2,3,5,8,13
+    12:    1,1,2,3,8,13,21
+    13:    1,2,3,8,13,21
     14:
     15:
     16:
     17:
 
-What does this output?
-57
-In general, what will this program output, given any input in slot 10?
-[10] times [11] + [12]
+What does this output?     
+13
+In general, what will this program output, given any input in slot 10?     
+[11] = nth+2 value of fibonacci sequence
 
 ## 4. Reading
 
@@ -140,9 +140,9 @@ Most readings for the beginning of the class will come from this textbook.  You 
 
 ## 5. Finally:
 
-How much time did this problem set take you?
+How much time did this problem set take you?     
 longer than I expected
-What, if anything, did you have trouble with?
+What, if anything, did you have trouble with?     
 writing out the math
-What, from lecture, would you like us to cover more clearly?
-cmd entries
+What, from lecture, would you like us to cover more clearly?     
+cmd entries with git
