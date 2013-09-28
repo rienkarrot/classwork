@@ -50,7 +50,7 @@ under the name 'manufactoria.png' (or whatever image format you
 prefer).  The third level in particular is a LOT trickier than the
 first two, so don't be surprised if it takes longer.
 
-
+     [Added Manufactoria_lvl03.png]
 ## 2. Low-level programming
 
 In lecture, we put up the memory layout of a computer program to do
@@ -137,7 +137,7 @@ Read chapter 1 of How to Think Like a Computer Scientist
 
 Most readings for the beginning of the class will come from this textbook.  You can find this in the class resources directory as a pdf, but you can also access it online [here](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap01.html)
 
-
+     [Done]
 ## 5. Finally:
 
 How much time did this problem set take you?     
