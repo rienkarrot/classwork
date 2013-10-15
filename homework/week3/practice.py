@@ -1,10 +1,12 @@
 def conjoin(first, second):
+    return first + "and" + second
+    
     """
     Return the two arguments conjoined with the word "and"
 
     Parameters:
     first - A string representing an English noun
-    second - Another string representing an english noun
+    second - Another string representing an English noun
 
     Returns as a string an english phrase formed by putting the word "and"
     between its two arguments.  For example, if there was some other code
@@ -16,6 +18,8 @@ def conjoin(first, second):
     pass
 
 def print_lots(phrase, times):
+    print phrase*times
+	
     """
     Print a phrase multiple times
 
@@ -31,6 +35,7 @@ def print_lots(phrase, times):
     pass
 
 def joyful_phrase():
+    
     """
     Randomly returns one of at least five different joyful phrases.
 
@@ -44,6 +49,13 @@ def joyful_phrase():
 
 
 def add_last_two(lst):
+    if len(lst) >= 2:
+	    return lst[-2] + lst [-1]
+	elif len(lst) == 1:
+	    return lst
+	else:
+	    return "0"
+		
     """
     Computes the sum of the last two elements in the given list.
 
@@ -58,6 +70,8 @@ def add_last_two(lst):
     pass
 
 def extend_fibonacci(lst):
+    lst.append(list[-2]+lst[-1]
+	
     """
     Append the sum of the last two elements
 
@@ -115,12 +129,12 @@ print conjoin(raw_input("Pick word 1: "), raw_input("Pick word 2: "))
 print conjoin(conjoin("a", "b"), "c")
 
 # call print_lots
-
+print print_lots(whee, 5)
 # call joyful_phrase
-
+print joyful_phrase()
 # call add_last_two
-
+print add_last_two()
 # call extend_fibonacci
-
+print extend fibonacci()
 # call count_v
-
+print count_v()

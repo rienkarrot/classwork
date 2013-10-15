@@ -1,5 +1,23 @@
 def is_better_than(player0, player1):
-    """
+    valid = "rock" or "paper" or "scissors"
+    if player0 and player1 == valid:
+        if player0 != player1:
+            if player0 == "rock" and player1 == "paper":
+	            return False
+            elif player0 == "paper" and player1 == "scissors":
+	            return False
+            elif player0 == "scissors" and player1 == "rock":
+                return False
+            else:
+                return True
+        else:
+            return None
+    else:
+	    return None
+	
+print is_better_than("rock", "scissors")
+
+"""
     Simulate a rock, paper, scissors game!
 
     Paper beats rock, scissors beats paper, rock beats scissors.
@@ -15,5 +33,5 @@ def is_better_than(player0, player1):
         True if player0 beats player1
         False if player1 beats player0
         None if a tie, or if an invalid string is passed
-    """
-    pass
+"""
+pass

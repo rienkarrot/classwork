@@ -12,6 +12,8 @@ to email the discuss list!
 Read [chapter 3](http://www.greenteapress.com/thinkpython/html/thinkpython004.html) from the
 Think Python book
 
+[Done.]
+
 ## Rock Paper Scissors
 
 In the file rockpaperscissors.py, fill in the function is_better_than based on
@@ -63,6 +65,8 @@ output:
     Ran 4 tests in 0.000s
 
     OK
+	
+[Still working on this. Please see rockpaperscissors.py file]
 
 ## Function practice
 
@@ -70,6 +74,8 @@ Open up practice.py in your text editor.  It has further instructions in the
 file itself.  There are 5 function bodies to fill out, 1 function specification
 to write, and then at the bottom some code to write to call all of the functions
 that you just wrote.
+
+[Almost done. See practice.py file]
 
 ## Markov Chains
 
@@ -167,10 +173,18 @@ program can go, see example.txt
 
 ## Survey
 
-How long did this assignment take you?
+How long did this assignment take you? 
+   
+the entire two weeks.
 
-What did you enjoy about it?
+What did you enjoy about it?    
 
-What did you have a hard time with?
+making functions and seeing them work correctly for the first time!
 
-What should we go over more in class?
+What did you have a hard time with?    
+
+checking valid input.
+
+What should we go over more in class?    
+
+functions like rockpaperscissors
