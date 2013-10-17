@@ -2,6 +2,7 @@ WRONG_GUESSES_ALLOWED=5
 
 
 def hangman(word):
+    
     """
     Requires word to be a string
 
@@ -24,6 +25,7 @@ def hangman(word):
     # processing that guess.
 
 def letter_pool(right_guesses, wrong_guesses):
+    
     """
     Requires right_guesses to be a string of letters the player has guessed
     before correctly, and wrong_guesses to be a string of letters the player has
@@ -33,6 +35,20 @@ def letter_pool(right_guesses, wrong_guesses):
     """
 
 def ask_for_letter(right_guesses, wrong_guesses):
+    letter = raw_input("Please enter a letter: ")
+    if letter.isalpha():
+        if len(letter) == 1:
+            if letter in right_guesses or letter in wrong_guesses:
+                print "You've already guessed this letter."
+            else:
+                return letter
+        else:
+            print "Please only enter one letter."
+    else:
+        print "Please enter a valid letter."
+        
+print ask_for_letter("abc", "def")
+
     """
     Requires right_guesses to be a string of letters the player has guessed
     before correctly, and wrong_guesses to be a string of letters the player has
@@ -48,16 +64,20 @@ def ask_for_letter(right_guesses, wrong_guesses):
     """
 
 def display_word_with_guesses(word, guesses):
+    result = ""
+    for character in word:
+        if character in guesses:
+            result += character
+        else:
+            result += "_"
+    return result
+	
     """
     Returns a string where every letter in the word contained in guesses is
     shown as that letter, and every letter in the word not contained in guesses
     is shown as an underscore.
     """
-    result = ""
-    for letter in word:
-        # fill in this stuff
-        pass
-    return result
+   
 
 def example(word):
     """
