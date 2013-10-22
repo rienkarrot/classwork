@@ -25,7 +25,18 @@ def hangman(word):
     # processing that guess.
 
 def letter_pool(right_guesses, wrong_guesses):
-    
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    print alphabet
+    for letter in range(len(alphabet)):
+        for guess in right_guesses:
+            if alphabet[letter] == guess:
+                alphabet[letter] = " "
+        for guess in wrong_guesses:
+            if alphabet[letter] == guess:
+                alphabet[letter] = " "
+    return alphabet
+
+print letter_pool("afg", "lmp")
     """
     Requires right_guesses to be a string of letters the player has guessed
     before correctly, and wrong_guesses to be a string of letters the player has

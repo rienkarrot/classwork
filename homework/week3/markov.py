@@ -3,7 +3,7 @@ from random import *
 
 
 def is_word(text):
-    """ REPLACE THIS TEXT WITH YOUR ANSWER """
+    """ Checks text for apostrophes, temporarily removes the apostrophe so it can check again to make sure the remaining text is a letter or a number. """
     if text == "'":
         return False
     #for contractions
@@ -39,7 +39,7 @@ def split_words_and_punctuation(text):
     return words
 
 def add_word(d, word, next_word):
-    """ REPLACE_THIS_TEXT_WITH_YOUR_ANSWER"""
+    """ Checks for a word (in a dictionary?) so it can add the next word, but if the word isn't found in the dictionary, it will add the word as a key and assign the next as its value. """
     if word in d:
         d[word].append(next_word)
     else:
@@ -76,7 +76,8 @@ def table_of_next_words(text):
 
 def pick_random_element(lst):
     """ Return a random element in the given list lst."""
-    pass
+	return choice(lst)
+	
 
 
 def make_text(table):

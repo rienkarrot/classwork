@@ -1,5 +1,5 @@
 def conjoin(first, second):
-    return first + "and" + second
+    return first + " and " + second
     
     """
     Return the two arguments conjoined with the word "and"
@@ -35,7 +35,11 @@ def print_lots(phrase, times):
     pass
 
 def joyful_phrase():
-    
+    import random
+    phrases = ["Yippee!", "Hooray!", "Yahoo!", "Dynamite!", "Fantastic!", "Outstanding!"]
+    return random.choice(phrases)
+	
+	
     """
     Randomly returns one of at least five different joyful phrases.
 
@@ -70,7 +74,7 @@ def add_last_two(lst):
     pass
 
 def extend_fibonacci(lst):
-    lst.append(list[-2]+lst[-1]
+    lst.append(list[-2]+lst[-1])
 	
     """
     Append the sum of the last two elements
@@ -101,7 +105,9 @@ def extend_fibonacci(lst):
 #the specification for the following function:
 
 def count_v(word):
-    """ FILL IN THE SPECIFICATION HERE """
+    """
+	This function will return a number representing the amount of vowels found in whatever word the user provides.
+	"""
     result = 0
     for c in word:
         if c in ['a', 'e', 'i', 'o', 'u']:
@@ -129,12 +135,23 @@ print conjoin(raw_input("Pick word 1: "), raw_input("Pick word 2: "))
 print conjoin(conjoin("a", "b"), "c")
 
 # call print_lots
-print print_lots(whee, 5)
+
+print print_lots("whee", 5)
+print print_lots("omg",4)
+print print_lots("yay ",2)
+
 # call joyful_phrase
+
 print joyful_phrase()
+
 # call add_last_two
-print add_last_two()
+
+print add_last_two([3,9,-2])
+
 # call extend_fibonacci
-print extend fibonacci()
+
+print extend fibonacci([1,5,8])
+
 # call count_v
-print count_v()
+
+print count_v("wooooooaaaah")

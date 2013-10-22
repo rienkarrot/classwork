@@ -75,7 +75,7 @@ file itself.  There are 5 function bodies to fill out, 1 function specification
 to write, and then at the bottom some code to write to call all of the functions
 that you just wrote.
 
-[Almost done. See practice.py file]
+[Done. See practice.py file]
 
 ## Markov Chains
 

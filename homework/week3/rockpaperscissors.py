@@ -1,6 +1,6 @@
 def is_better_than(player0, player1):
-    valid = "rock" or "paper" or "scissors"
-    if player0 and player1 == valid:
+    valid = ["rock", "paper", "scissors"]
+    if player0 and player1 in valid:
         if player0 != player1:
             if player0 == "rock" and player1 == "paper":
 	            return False
