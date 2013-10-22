@@ -12,7 +12,7 @@ def is_word(text):
     return False
 
 def split_words_and_punctuation(text):
-    """ REPLACE THIS TEXT WITH YOUR ANSWER """
+    """ Populates a list with words. """
     words = []
     currentword = ""
     for i in range(len(text)):
@@ -46,6 +46,8 @@ def add_word(d, word, next_word):
         d[word] = [next_word]
 
 def table_of_next_words(text):
+    dictionary = {}
+	
     """
     Creates a table of what words we have seen after other words.
 
@@ -77,10 +79,11 @@ def table_of_next_words(text):
 def pick_random_element(lst):
     """ Return a random element in the given list lst."""
 	return choice(lst)
-	
-
 
 def make_text(table):
+    table = {}
+	choice(table)
+	d[word] = [next_word]
     """
     Given a table of next words, construct a random text with similar
     word frequencies.
