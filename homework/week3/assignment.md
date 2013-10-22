@@ -66,7 +66,7 @@ output:
 
     OK
 	
-[Still working on this. Please see rockpaperscissors.py file]
+[Done. Please see rockpaperscissors.py file]
 
 ## Function practice
 

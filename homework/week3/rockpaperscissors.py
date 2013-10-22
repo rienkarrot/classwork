@@ -1,19 +1,19 @@
 def is_better_than(player0, player1):
     valid = ["rock", "paper", "scissors"]
-    if player0 and player1 in valid:
-        if player0 != player1:
-            if player0 == "rock" and player1 == "paper":
-	            return False
-            elif player0 == "paper" and player1 == "scissors":
-	            return False
-            elif player0 == "scissors" and player1 == "rock":
-                return False
-            else:
-                return True
-        else:
-            return None
-    else:
+    if player0 not in valid or player1 not in valid:
 	    return None
+    if player0 != player1:
+        if player0 == "rock" and player1 == "paper":
+	        return False
+        elif player0 == "paper" and player1 == "scissors":
+	        return False
+        elif player0 == "scissors" and player1 == "rock":
+            return False
+        else:
+            return True
+    else:
+        return None
+    
 	
 print is_better_than("rock", "scissors")
 

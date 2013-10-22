@@ -1,8 +1,17 @@
-WRONG_GUESSES_ALLOWED=5
-
+WRONG_GUESSES_ALLOWED = 5
 
 def hangman(word):
-    
+    right_guesses = ""
+	wrong_guesses = ""
+	while (len(wrong_guesses) <= WRONG_GUESSES_ALLOWED) or (len(right_guesses) == len(word)):
+	    display_word_with_guesses(word, right_guesses)
+	    letter = ask_for_letter(right_guesses, wrong_guesses)
+		if letter not in word:
+		    wrong_guesses += letter
+		else:
+		    right_guesses += letter
+	    print letter_pool(right_guesses, wrong_guesses)
+	print "Thanks for playing!"    
     """
     Requires word to be a string
 
@@ -26,7 +35,6 @@ def hangman(word):
 
 def letter_pool(right_guesses, wrong_guesses):
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    print alphabet
     for letter in range(len(alphabet)):
         for guess in right_guesses:
             if alphabet[letter] == guess:
@@ -35,8 +43,6 @@ def letter_pool(right_guesses, wrong_guesses):
             if alphabet[letter] == guess:
                 alphabet[letter] = " "
     return alphabet
-
-print letter_pool("afg", "lmp")
     """
     Requires right_guesses to be a string of letters the player has guessed
     before correctly, and wrong_guesses to be a string of letters the player has
@@ -57,9 +63,6 @@ def ask_for_letter(right_guesses, wrong_guesses):
             print "Please only enter one letter."
     else:
         print "Please enter a valid letter."
-        
-print ask_for_letter("abc", "def")
-
     """
     Requires right_guesses to be a string of letters the player has guessed
     before correctly, and wrong_guesses to be a string of letters the player has
