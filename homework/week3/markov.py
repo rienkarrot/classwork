@@ -1,7 +1,6 @@
 import sys, os
 from random import *
 
-
 def is_word(text):
     """ Checks text for apostrophes, temporarily removes the apostrophe so it can check again to make sure the remaining text is a letter or a number. """
     if text == "'":
@@ -12,7 +11,7 @@ def is_word(text):
     return False
 
 def split_words_and_punctuation(text):
-    """ Populates a list with words. """
+    """ Populates a list with words. Keeps adding 'currentword' to the list 'words,' """
     words = []
     currentword = ""
     for i in range(len(text)):
@@ -46,7 +45,8 @@ def add_word(d, word, next_word):
         d[word] = [next_word]
 
 def table_of_next_words(text):
-    dictionary = {}
+    d = {}
+	d[word] = [next_word]
 	
     """
     Creates a table of what words we have seen after other words.
@@ -81,9 +81,14 @@ def pick_random_element(lst):
 	return choice(lst)
 
 def make_text(table):
-    table = {}
-	choice(table)
-	d[word] = [next_word]
+    table_of_next_words(text)
+	
+	is_word(text)
+	split_words_and_punctuation(text)
+	add_word(d, word, next_word)
+	
+	pick_random_element(lst)
+	
     """
     Given a table of next words, construct a random text with similar
     word frequencies.
