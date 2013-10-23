@@ -13,16 +13,13 @@ class TestSearch(unittest.TestCase):
         self.assertEqual(0, binarysearch.search([0], 0))
     
     def test_none(self):
-        self.assertEqual("", binarysearch.search([""], ""))
+        self.assertEqual(None, binarysearch.search([], 1))
     	
     def test_words(self):
         self.assertEqual(0, binarysearch.search(["zebra", "horse"], "zebra"))
     
     def test_lots(self):
         self.assertEqual(4, binarysearch.search([0,5,10,15,20,25,30,35], 20))
-
-    def test_different(self):
-        self.assertEqual(
 	
 if __name__ == '__main__':
     unittest.main()
