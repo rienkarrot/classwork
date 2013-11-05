@@ -2,7 +2,7 @@ import sys, os
 from random import *
 
 def is_word(text):
-    """ Checks text for apostrophes, temporarily removes the apostrophe so it can check again to make sure the remaining text is a letter or a number. """
+    ''' Checks text for apostrophes, temporarily removes the apostrophe so it can check again to make sure the remaining text is a letter or a number. '''
     if text == "'":
         return False
     #for contractions
@@ -11,7 +11,7 @@ def is_word(text):
     return False
 
 def split_words_and_punctuation(text):
-    """ Populates a list with words. Keeps adding 'currentword' to the list 'words,' """
+    ''' Populates a list with words. Keeps adding the current word (or non-letter character, separately) to the list 'words,' '''
     words = []
     currentword = ""
     for i in range(len(text)):
@@ -38,17 +38,14 @@ def split_words_and_punctuation(text):
     return words
 
 def add_word(d, word, next_word):
-    """ Checks for a word (in a dictionary?) so it can add the next word, but if the word isn't found in the dictionary, it will add the word as a key and assign the next as its value. """
+    ''' Checks for a word in a dictionary, so it can modify the dictionary to add the next word, but if the word isn't found in the dictionary, it will add the word as a key and assign the next_word as its value. Any word will have a list of possible next_word(s) assigned to it. '''
     if word in d:
         d[word].append(next_word)
     else:
         d[word] = [next_word]
 
 def table_of_next_words(text):
-    d = {}
-	d[word] = [next_word]
-	
-    """
+    '''
     Creates a table of what words we have seen after other words.
 
     Parameters:
@@ -73,23 +70,21 @@ def table_of_next_words(text):
       'b': ['c', None],
       'c': ['a']
     }
-    """
+    '''
+    d = {}
+    d[word] = [next_word]
+    return d
+    pass
+def update_table(table, text):
+    
     pass
 
 def pick_random_element(lst):
-    """ Return a random element in the given list lst."""
-	return choice(lst)
+    ''' Return a random element in the given list lst.'''
+    return choice(lst)
 
 def make_text(table):
-    table_of_next_words(text)
-	
-	is_word(text)
-	split_words_and_punctuation(text)
-	add_word(d, word, next_word)
-	
-	pick_random_element(lst)
-	
-    """
+    '''
     Given a table of next words, construct a random text with similar
     word frequencies.
 
@@ -112,7 +107,14 @@ def make_text(table):
 
     * No punctuation is preceded by a space.
     
-    """
+    '''
+    table_of_next_words(text)
+	
+    is_word(text)
+    split_words_and_punctuation(text)
+    add_word(d, word, next_word)
+	
+    pick_random_element(lst)
     pass
 
 def main(argv):

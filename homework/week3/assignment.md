@@ -175,7 +175,7 @@ program can go, see example.txt
 
 How long did this assignment take you? 
    
-the entire two weeks.
+the entire two weeks, and then some.
 
 What did you enjoy about it?    
 
