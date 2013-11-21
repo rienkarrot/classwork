@@ -73,26 +73,16 @@ throw an exception.
 Your job is to add exception handling to this file.  Make the exceptions as
 specific as possible.  For instance, don't `catch Exception`, you should `catch
 ValueError` instead.  In the catch block, print out an error message.  If you
-also feel like the program can't continue at that point (maybe it had trouble
-loading a file), then use `sys.exit()` to quit the program entirely.
+also feel like the program can't continue at that point (maybe it had trouble loading a file), then use `sys.exit()` to quit the program entirely.
 
-There are at least four different lines of code that can throw different kinds
-of exceptions.  If you are having trouble coming up with all four, try thinking
-about different file contents that you could load that might cause problems.
+There are at least four different lines of code that can throw different kinds of exceptions.  If you are having trouble coming up with all four, try thinking about different file contents that you could load that might cause problems.
 
 
 ## Score keeping:
 
-Sometimes when playing games with friends, it's really tedious to have to keep
-track of scores round after round.  Your job is to write a program that will
-keep track of scores and store them in a file.  The idea is that after each
-round, you would run this program and enter everybody's scores for the round
-in, and then it would give you current score totals.
+Sometimes when playing games with friends, it's really tedious to have to keep track of scores round after round.  Your job is to write a program that will keep track of scores and store them in a file.  The idea is that after each round, you would run this program and enter everybody's scores for the round in, and then it would give you current score totals.
 
-First, take a look at `scores.txt`.  It's a pretty simple format.  There's one
-line with a person's name, and then multiple lines with integer scores for each
-round.  Assume each person has the same amount of rounds.  In this case, every
-player has played three rounds.
+First, take a look at `scores.txt`.  It's a pretty simple format.  There's one line with a person's name, and then multiple lines with integer scores for each round.  Assume each person has the same amount of rounds.  In this case, every player has played three rounds.
 
 Your job is to write a program in `scorekeeper.py` that does this score tracking.
 This program should do the following things:
@@ -112,14 +102,14 @@ scores.txt file, it should look like this:
     Total points per player:
         amber: 4
         naomi: 17
-        aiiaiea: 10
+        aia: 10
 
 Third, the program should prompt for scores for the current round.  The user
 should be able to enter a single score per player.  For example:
 
     How many points did enne score? 5
     How many points did naomi score? -3
-    How many points did aiiaiea score 20
+    How many points did aia score 20
 
 If a user enters in a non-integer, the program should print out an error
 message and ask for the score again.  You should use a try/except block for
@@ -131,7 +121,7 @@ not repeat yourself!  Try to reuse the print function from above.
     Total points per player:
         enne: 9
         naomi: 14
-        aiiaiea: 30
+        aia: 30
 
 Finally, the program should open up scores.txt and write out all of the player
 names and all the new round scores.

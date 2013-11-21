@@ -21,8 +21,7 @@ def split_words_and_punctuation(text):
         else:
             next = None
         if c.isalnum() or (c == "'" and next != None and next.isalnum()):
-            #The second part of the or is for contractions, which should
-            #appear as a single word
+            #The second part of the or is for contractions, which #should appear as a single word
             currentword += c
         elif c.isspace():
             if currentword != "":
@@ -72,12 +71,17 @@ def table_of_next_words(text):
     }
     '''
     d = {}
-    d[word] = [next_word]
+    update_table(d, text)
     return d
-    pass
-def update_table(table, text):
     
-    pass
+def update_table(table, text):
+    previous_word = None
+    list_of_words = split_words_and_punctuation(text)
+    for word in list_of_words:
+        add_word(table, previous_word, word)
+        previous_word = word
+    add_word(table, previous_word, None)
+    return table
 
 def pick_random_element(lst):
     ''' Return a random element in the given list lst.'''
@@ -89,33 +93,35 @@ def make_text(table):
     word frequencies.
 
     Parameters:
-
     table - a dictionary of the form word->list of next words seen --
     the same form that comes out of the function table_of_next_words
 
     Returns a string where:
-
     * The first word is randomly chosen from the list table[None]
-
     * Every further word is randomly chosen from the list gotten by
       looking up the previous word
-
-    * When the next word is chosen to be None, there is no next word
-      and the words chosen so far are returned as a string.
-
-    * Every word is preceded by a space.
-
-    * No punctuation is preceded by a space.
+    * When the next word is chosen to be None, there is no next word and the words chosen so far are returned as a string.
+    ''' 
+    next_word = pick_random_element(table[None])
+    new_text = []
+    while next_word != None:
+        new_text.append(next_word)
+        next_word = pick_random_element(table[next_word])
+    return new_text
     
+def spacing(lst):
     '''
-    table_of_next_words(text)
-	
-    is_word(text)
-    split_words_and_punctuation(text)
-    add_word(d, word, next_word)
-	
-    pick_random_element(lst)
-    pass
+    * Every word is preceded by a space.
+    * No punctuation is preceded by a space.
+    '''
+    lst = make_text(table)
+    new_lst = ""
+    for word in lst:
+        if is_word(word) != word:
+            new_lst.append(word)
+        else:
+            new_lst.append(" " + word)
+    return new_lst
 
 def main(argv):
     if len(argv) == 0:
