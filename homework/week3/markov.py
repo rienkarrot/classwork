@@ -114,14 +114,17 @@ def spacing(lst):
     * Every word is preceded by a space.
     * No punctuation is preceded by a space.
     '''
-    lst = make_text(table)
-    new_lst = ""
+    
+    new_lst = []
     for word in lst:
-        if is_word(word) != word:
-            new_lst.append(word)
+        if word != lst[0]:
+            if is_word(word):
+                new_lst.append(" " + word)
+            else:
+                new_lst.append(word)
         else:
-            new_lst.append(" " + word)
-    return new_lst
+            new_lst.append(word)
+    return "".join(new_lst)
 
 def main(argv):
     if len(argv) == 0:
@@ -131,7 +134,9 @@ def main(argv):
     with open(filename) as f:
         text = f.read()
         table = table_of_next_words(text)
-        print make_text(table)
+        #print make_text(table)
+        lst = make_text(table)
+        print spacing(lst)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
