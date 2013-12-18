@@ -1,7 +1,7 @@
 def getwords():
-    """
+    '''
     Returns a list of words in our (included) dictionary.
-    """
+    '''
     words = []
     with open('2of12inf.txt', 'r') as f:
         for word in f:
@@ -10,11 +10,11 @@ def getwords():
     return words
 
 def normalize(letters):
-    """
+    '''
     Since anagrams only care about what letters they have to work with, and
     not the order of them, this function returns the same string for any
     set of letters that are the same.  It removes any non-alphabetic characters.
-    """
+    '''
     lst = []
     for c in letters:
         lst.append(c)
@@ -22,7 +22,7 @@ def normalize(letters):
     return "".join(lst)
 
 def remove_letters(remove, bank):
-    """
+    '''
     Removes some letters from the letter bank
 
     Parameters:
@@ -35,7 +35,7 @@ def remove_letters(remove, bank):
 
     If the bank does not have enough letters such that every specified
     letter can be removed, this function returns None
-    """
+    '''
     for letter in remove:
         if letter not in bank:
             return None
@@ -44,7 +44,7 @@ def remove_letters(remove, bank):
     return bank
 
 def anagrams(letters, words, min_length=3, memo = {}):
-    """
+    '''
     Find anagrams of a phrase.
 
     Parameters:
@@ -60,7 +60,7 @@ def anagrams(letters, words, min_length=3, memo = {}):
     real words, though the phrases may not make sense).  Only the
     alphabetic characters in letters are used, any spaces or
     punctuation is ignored.
-    """
+    '''
     # empty means no anagrams
     if not letters:
         return []
